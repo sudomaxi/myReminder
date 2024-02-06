@@ -16,6 +16,10 @@ require("./config/database").connect();
 require("./cron/calls.cron");
 require("./cron/tasks.cron");
 
+app.get("/", (req, res) => {
+  res.status(200).send("Hello From Backend...");
+})
+
 //route import and mount
 const user = require("./routes/user.routes");
 const task = require("./routes/tasks.routes");
